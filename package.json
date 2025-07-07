@@ -19,6 +19,7 @@
     "defu": "^6.1.4",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.10.0",
+    "oh-vue-icons": "1.0.0-rc3",
     "pinia": "^2.1.7",
     "viem": "~2.31.1"
   },

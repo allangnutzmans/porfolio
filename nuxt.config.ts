@@ -5,7 +5,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   // Target is now handled automatically in Nuxt 3
   app: {
-    baseURL: '/dashboard/',
+    baseURL: '/',
     head: {
       title: 'Dashboard - Nuxt.js fast loading dashboard theme',
       meta: [
