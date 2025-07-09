@@ -1,3 +1,26 @@
+<script setup>
+import { useMainStore } from '@/store/useMainStore'
+import IconsPs from '@/components/icons/ps.vue'
+import IconsAi from '@/components/icons/ai.vue'
+import IconsAe from '@/components/icons/ae.vue'
+
+const mainStore = useMainStore()
+
+function isVisible(event) {
+  event.currentTarget.classList.toggle('is-active')
+  const overlay = document.querySelector('.content-wrapper')
+  if (overlay) overlay.classList.add('overlay')
+}
+function blurred() {
+  const overlay = document.querySelector('.content-wrapper')
+  if (overlay) overlay.classList.remove('overlay')
+  const allmenus = document.querySelectorAll('.dropdown')
+  allmenus.forEach((ele) => {
+    ele.classList.remove('is-active')
+  })
+}
+</script>
+
 <template>
   <ul>
     <li
@@ -23,12 +46,12 @@
         {{ product.status }}</span
       >
       <div class="button-wrapper">
-        <button
-          class="content-button status-button open"
+        <s-button
+          variant="outline"
           v-if="product.status == 'Updated'"
         >
           Open
-        </button>
+        </s-button>
         <button
           class="content-button status-button"
           v-if="product.status == 'Update Available'"
@@ -49,26 +72,3 @@
     </li>
   </ul>
 </template>
-
-<script setup>
-import { useMainStore } from '@/store/useMainStore'
-import IconsPs from '@/components/icons/ps.vue'
-import IconsAi from '@/components/icons/ai.vue'
-import IconsAe from '@/components/icons/ae.vue'
-
-const mainStore = useMainStore()
-
-function isVisible(event) {
-  event.currentTarget.classList.toggle('is-active')
-  const overlay = document.querySelector('.content-wrapper')
-  if (overlay) overlay.classList.add('overlay')
-}
-function blurred() {
-  const overlay = document.querySelector('.content-wrapper')
-  if (overlay) overlay.classList.remove('overlay')
-  const allmenus = document.querySelectorAll('.dropdown')
-  allmenus.forEach((ele) => {
-    ele.classList.remove('is-active')
-  })
-}
-</script>

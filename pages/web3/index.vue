@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import IconsSt from '@/components/icons/st.vue'
 import Banner from '@/components/motion/Banner.vue'
+import StackList from './[components]/StackList.vue'
 </script>
 
 <template>
@@ -21,5 +21,9 @@ import Banner from '@/components/motion/Banner.vue'
     </template>
     <template #image></template>
   </Banner>
+    <div class="content-section">
+      <div class="content-section-title">Stack</div>
+      <StackList />
+    </div>
   </div>
 </template>

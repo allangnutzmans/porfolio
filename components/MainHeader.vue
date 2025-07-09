@@ -21,12 +21,12 @@ import { ref } from 'vue'
 const submenu = ref([
   {
     href: '#',
-    text: 'Desktop',
+    text: 'Overview',
     class: 'is-active',
   },
   {
     href: '#',
-    text: 'Mobile',
+    text: 'Projects',
     class: '',
   },
   {

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useMotion } from '@vueuse/motion'
 import BannerCardMotion from './BannerCardMotion.vue'
 import BannerTextMotion from './BannerTextMotion.vue'
@@ -96,13 +95,13 @@ onBeforeUnmount(() => {
   transition: transform 0.1s ease-out;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.05);
   flex: 0 1 auto;
   width: auto;
   &:hover {
-    box-shadow: 
+    box-shadow:
       0 12px 40px rgba(0, 0, 0, 0.15),
       0 0 0 1px rgba(255, 255, 255, 0.1);
   }
@@ -134,7 +133,7 @@ onBeforeUnmount(() => {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 
+  text-shadow:
     0 2px 12px rgba(0, 0, 0, 0.25),
     0 4px 20px rgba(0, 0, 0, 0.15),
     0 8px 30px rgba(0, 0, 0, 0.1);
@@ -145,7 +144,7 @@ onBeforeUnmount(() => {
   font-size: 1.15rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
-  text-shadow: 
+  text-shadow:
     0 2px 8px rgba(0, 0, 0, 0.2),
     0 4px 16px rgba(0, 0, 0, 0.1);
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
@@ -160,7 +159,7 @@ onBeforeUnmount(() => {
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 
+  box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.10),
     0 4px 16px rgba(0, 0, 0, 0.15),
     0 8px 24px rgba(0, 0, 0, 0.1);
@@ -171,7 +170,7 @@ onBeforeUnmount(() => {
     background: #222;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 
+    box-shadow:
       0 4px 12px rgba(0, 0, 0, 0.15),
       0 8px 24px rgba(0, 0, 0, 0.2),
       0 12px 32px rgba(0, 0, 0, 0.15);

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+defineProps<{
+  bgImage: string,
+}>();
+const cardRef = ref(null);
+defineExpose({ cardRef })
+</script>
+
 <template>
   <div
     ref="cardRef"
@@ -10,15 +18,6 @@
     <slot name="image" class="banner-image-slot"></slot>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref, defineProps, defineExpose } from 'vue'
-const props = defineProps({
-  bgImage: String
-})
-const cardRef = ref(null)
-defineExpose({ cardRef })
-</script>
 
 <style scoped lang="scss">
 .banner-container {
@@ -39,13 +38,13 @@ defineExpose({ cardRef })
   transition: transform 0.1s ease-out;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.05);
   flex: 0 1 auto;
   width: auto;
   &:hover {
-    box-shadow: 
+    box-shadow:
       0 12px 40px rgba(0, 0, 0, 0.15),
       0 0 0 1px rgba(255, 255, 255, 0.1);
   }
@@ -68,4 +67,4 @@ defineExpose({ cardRef })
   max-height: 80%;
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
 }
-</style> 
+</style>
