@@ -14,6 +14,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@pinia/nuxt": "^0.11.1",
     "@tanstack/vue-query": "^5.80.7",
+    "@vueuse/motion": "^3.0.3",
     "@wagmi/vue": "^0.1.22",
     "core-js": "^3.9.1",
     "defu": "^6.1.4",

@@ -1,11 +1,11 @@
-<script setup>
-const props = defineProps({
-  title: String,
-  icon: String,
-  text: String,
-  image: String,
-  btntext: String
-})
+<script setup lang="ts">
+const props = defineProps<{
+  title: string,
+  icon: string,
+  text: string,
+  image: string,
+  btntext: string
+}>();
 </script>
 <template>
   <div class="content-wrapper-header">

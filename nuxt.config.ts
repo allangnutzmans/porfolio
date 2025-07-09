@@ -30,6 +30,54 @@ export default defineNuxtConfig({
   css: ['normalize.css/normalize.css', '@/assets/style.scss'],
   modules: [
     '@pinia/nuxt',
+    '@vueuse/motion/nuxt',
   ],
+  runtimeConfig: {
+    public: {
+      motion: {
+        directives: {
+          'banner-tilt': {
+            initial: {
+              rotateX: 0,
+              rotateY: 0,
+              z: 0,
+            },
+            visible: {
+              rotateX: 0,
+              rotateY: 0,
+              z: 0,
+            },
+            hover: {
+              rotateX: 0,
+              rotateY: 0,
+              z: 20,
+            }
+          },
+          'pop-bottom': {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+            }
+          },
+          'fade-in': {
+            initial: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            }
+          }
+        }
+      }
+    }
+  },
   compatibilityDate: '2025-06-12',
 })
