@@ -10,7 +10,6 @@ defineExpose({ cardRef })
   <div
     ref="cardRef"
     v-motion
-    class="banner-container"
     :style="{ backgroundImage: bgImage ? `url('/${bgImage}')` : undefined }"
   >
     <div class="banner-overlay"></div>
@@ -20,36 +19,6 @@ defineExpose({ cardRef })
 </template>
 
 <style scoped lang="scss">
-.banner-container {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
-  min-height: 220px;
-  padding: 2rem 2.5rem;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  background-size: cover;
-  background-position: left;
-  background-repeat: no-repeat;
-  margin-bottom: 2rem;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: transform 0.1s ease-out;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-  flex: 0 1 auto;
-  width: auto;
-  &:hover {
-    box-shadow:
-      0 12px 40px rgba(0, 0, 0, 0.15),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
-  }
-}
-
 .banner-overlay {
   position: absolute;
   inset: 0;

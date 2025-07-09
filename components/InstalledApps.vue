@@ -1,8 +1,8 @@
 <script setup>
 import { useMainStore } from '@/store/useMainStore'
-import IconsPs from '@/components/icons/ps.vue'
-import IconsAi from '@/components/icons/ai.vue'
-import IconsAe from '@/components/icons/ae.vue'
+import IconsPs from '@/components/icons/remove/ps.vue'
+import IconsAi from '@/components/icons/remove/ai.vue'
+import IconsAe from '@/components/icons/remove/ae.vue'
 
 const mainStore = useMainStore()
 

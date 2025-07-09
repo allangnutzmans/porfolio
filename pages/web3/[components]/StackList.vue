@@ -1,10 +1,10 @@
 <script setup>
 import LogoSolidity from '@/components/icons/LogoSolidity.vue'
-import LogoChainlink from '../../../components/icons/LogoChainlink.vue'
-import LogoEthereum from '../../../components/icons/LogoEthereum.vue'
-import LogoAlchemy from '../../../components/icons/LogoAlchemy.vue'
-import LogoFoundry from '../../../components/icons/LogoFoundry.vue'
-import LogoMetamask from '../../../components/icons/LogoMetamask.vue'
+import LogoChainlink from '@/components/icons/LogoChainlink.vue'
+import LogoEthereum from '@/components/icons/LogoEthereum.vue'
+import LogoAlchemy from '@/components/icons/LogoAlchemy.vue'
+import LogoFoundry from '@/components/icons/LogoFoundry.vue'
+import LogoMetamask from '@/components/icons/LogoMetamask.vue'
 
 const STACKWEB3 = [
   {
@@ -41,7 +41,7 @@ const STACKWEB3 = [
 </script>
 
 <template>
-  <ul class="adobe-product">
+  <ul class="">
     <li
       class="adobe-product"
       v-for="(tech, index) in STACKWEB3"

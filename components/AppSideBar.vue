@@ -67,7 +67,7 @@ const CATEGORIES: TechCategory[] = [
       </div>
     </div>
     <div class="side-wrapper">
-      <div class="side-title">Techologies</div>
+      <div class="side-title">Tech & Tools</div>
       <div class="side-menu">
         <NuxtLink v-for="tech in CATEGORIES" :to="`/${tech.name.toLowerCase()}`">
             <v-icon :name="tech.icon" />

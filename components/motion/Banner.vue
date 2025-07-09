@@ -3,17 +3,17 @@ import { useMotion } from '@vueuse/motion'
 import BannerCardMotion from './BannerCardMotion.vue'
 import BannerTextMotion from './BannerTextMotion.vue'
 
-const props = defineProps({
-  title: String,
-  icon: String,
-  text: String,
-  bgImage: String,
-  btntext: String,
+const props = defineProps<{
+  title: string,
+  icon: string,
+  text: string,
+  bgImage: string,
+  btntext: string,
   align: {
-    type: String,
+    type: string,
     default: 'right'
   }
-})
+}>()
 
 const cardRef = ref(null)
 const textRef = ref(null)
@@ -43,7 +43,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="banner-outer">
+  <div class="banner-outer debug">
     <BannerCardMotion
       ref="cardRef"
       v-motion
@@ -69,9 +69,6 @@ onBeforeUnmount(() => {
 <style scoped lang="scss">
 .banner-outer {
   position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
   width: 100%;
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
@@ -82,7 +79,6 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
-  min-height: 220px;
   padding: 2rem 2.5rem;
   border-radius: 1.5rem;
   overflow: hidden;
@@ -98,8 +94,8 @@ onBeforeUnmount(() => {
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.05);
-  flex: 0 1 auto;
-  width: auto;
+  flex: 1;
+  width: 100%;
   &:hover {
     box-shadow:
       0 12px 40px rgba(0, 0, 0, 0.15),

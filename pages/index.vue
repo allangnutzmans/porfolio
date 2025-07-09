@@ -1,10 +1,10 @@
 
 <script setup>
 import { useMainStore } from '@/store/useMainStore'
-import IconsSt from '@/components/icons/st.vue'
-import IconsPr from '@/components/icons/pr.vue'
-import IconsId from '@/components/icons/id.vue'
-import IconsAe from '@/components/icons/ae.vue'
+import IconsSt from '@/components/icons/remove/st.vue'
+import IconsPr from '@/components/icons/remove/pr.vue'
+import IconsId from '@/components/icons/remove/id.vue'
+import IconsAe from '@/components/icons/remove/ae.vue'
 
 const mainStore = useMainStore()
 </script>
