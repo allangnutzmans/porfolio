@@ -1,5 +1,5 @@
 <script setup>
-import InnerWindowButtons from './layout/InnerWindowButtons.vue'
+import InnerWindowButtons from './InnerWindowButtons.vue'
 
 const wide = ref(false)
 const menu = ref([
