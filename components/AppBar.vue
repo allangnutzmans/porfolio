@@ -1,5 +1,6 @@
-
 <script setup>
+import InnerWindowButtons from './layout/InnerWindowButtons.vue'
+
 const wide = ref(false)
 const menu = ref([
   {
@@ -34,7 +35,7 @@ function isActive(index) {
 
 <template>
   <div class="header" :class="{ wide: wide }">
-    <div class="menu-circle"></div>
+    <InnerWindowButtons />
     <div class="header-menu">
       <a
         v-for="(item, index) in menu"

@@ -1,8 +1,10 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { useMainStore } from '@/store/useMainStore'
+import { useScreenMode } from '@/store/useScreenMode'
 
 const mainStore = useMainStore()
+const { screenMode } = useScreenMode()
 const dark = ref('light-mode')
 
 function toggleDark() {
@@ -40,20 +42,22 @@ watch(dark, (val) => {
         <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
       </svg>
     </div>
-    <div class="app">
-      <AppBar />
-      <div class="wrapper">
-        <AppSideBar />
-        <div class="main-container">
-          <MainHeader />
-          <NuxtPage />
+    <div :class="['app-animator', { 'fullscreen-mode': screenMode === 'fullscreen' }]">
+      <div class="app">
+        <AppBar />
+        <div class="wrapper">
+          <AppSideBar />
+          <div class="main-container">
+            <MainHeader />
+            <NuxtPage />
+          </div>
         </div>
+        <div
+          class="overlay-app"
+          :class="{ 'is-active': mainStore.popup }"
+          @click="mainStore.togglePopup()"
+        ></div>
       </div>
-      <div
-        class="overlay-app"
-        :class="{ 'is-active': mainStore.popup }"
-        @click="mainStore.togglePopup()"
-      ></div>
     </div>
   </div>
 </template>
