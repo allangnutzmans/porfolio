@@ -7,7 +7,9 @@ import StackList from './[components]/StackList.vue'
   <div class="content-wrapper">
     <Banner
     title="React"
-    text="Community boosted framework. Popuplar. Full of asdaksdmoasd "
+    text="Community boosted framework. Popuplar. Grab yourself 10 free images from Adobe Stock in a 30-day free trial
+        plan and find perfect image, that will help you with your new project
+        plan and find perfect image, that will help you with your new project"
     btntext="Start free trial"
     bg-image="react-banner-full.png"
     align="right"

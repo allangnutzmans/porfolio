@@ -18,6 +18,8 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    perspective: 1000px;
+    transform-style: preserve-3d;
     background-image: url('https://www.transparenttextures.com/patterns/cubes.png'),
       linear-gradient(
         to right top,
@@ -95,7 +97,7 @@
 .content-wrapper-img {
   width: 186px;
   object-fit: cover;
-  margin-top: -25px;
+  transform: translateY(-25px);
   object-position: center;
   @media screen and (max-width: 570px) {
     width: 110px;
