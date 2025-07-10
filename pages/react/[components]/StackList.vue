@@ -1,12 +1,11 @@
 <script setup>
 
 import LogoTS from '@/components/icons/LogoTS.vue'
-import LogoVuetify from '@/components/icons/LogoVuetify.vue'
-import LogoVueUse from '@/components/icons/LogoVueUse.vue'
-import LogoPinia from '@/components/icons/LogoPinia.vue'
 import LogoShadcn from '@/components/icons/LogoShadcn.vue'
 import LogoTailwind from '@/components/icons/LogoTailwind.vue'
 import LogoVite from '@/components/icons/LogoVite.vue'
+import LogoWebpack from '@/components/icons/LogoWebpack.vue'
+import LogoMUI from '../../../components/icons/LogoMUI.vue'
 import LogoTanstack from '../../../components/icons/LogoTanstack.vue'
 
 const STACKWEB3 = [
@@ -17,13 +16,18 @@ const STACKWEB3 = [
   },
   {
     name: 'Vite',
-    status: 'Advanced',
+    status: 'Preffered',
     icon: LogoVite
   },
   {
-    name: 'Vuetify',
+    name: 'Webpack',
+    status: 'Advanced',
+    icon: LogoWebpack
+  },
+  {
+    name: 'MUI',
     status: 'Updated',
-    icon: LogoVuetify
+    icon: LogoMUI
   },
   {
     name: 'Tailwind',
@@ -35,21 +39,10 @@ const STACKWEB3 = [
     status: 'Updated',
     icon: LogoShadcn
   },
-
   {
     name: 'Tanstack',
     status: 'Advanced',
     icon: LogoTanstack
-  },
-  {
-    name: 'Pinia',
-    status: 'Advanced',
-    icon: LogoPinia
-  },
-  {
-    name: 'VueUse',
-    status: 'Updated',
-    icon: LogoVueUse
   },
 ]
 </script>
