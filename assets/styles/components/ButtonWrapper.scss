@@ -1,0 +1,23 @@
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 187px;
+  margin-left: auto;
+  @media screen and (max-width: 480px) {
+    width: auto;
+  }
+}
+
+// TODO FIND THiS UNKNOWN USAGE
+.content-button-wrapper .content-button.status-button.open.close {
+  width: auto;
+}
+
+.content-button-wrapper {
+  margin-top: auto;
+  margin-left: auto;
+  .open {
+    margin-right: 8px;
+  }
+}

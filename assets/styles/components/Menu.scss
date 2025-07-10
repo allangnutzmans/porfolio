@@ -1,0 +1,52 @@
+.menu {
+  width: 5px;
+  height: 5px;
+  background-color: var(--button-inactive);
+  border-radius: 50%;
+  box-shadow: 7px 0 0 0 var(--button-inactive),
+    14px 0 0 0 var(--button-inactive);
+  margin: 0 12px;
+}
+
+@media screen and (max-width: 415px) {
+  .adobe-product .menu {
+    display: none;
+  }
+}
+
+// DOTS MENU
+.menu-link-main {
+  text-decoration: none;
+  color: var(--theme-color);
+  padding: 0 30px;
+  @media screen and (max-width: 1055px) {
+    display: none;
+  }
+}
+
+.wide {
+  .header-menu,
+  .header-profile {
+    display: none;
+  }
+  .search-bar {
+    max-width: 600px;
+    margin: auto;
+    transition: 0.4s;
+    box-shadow: 0 0 0 1px var(--border-color);
+    padding-left: 0;
+  }
+  .menu-circle {
+    margin-right: 0;
+  }
+}
+
+.updates {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+}

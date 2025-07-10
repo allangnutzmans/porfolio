@@ -1,0 +1,19 @@
+.notification {
+  &-number {
+    background-color: #3a6df0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  & + svg {
+    margin-left: 22px;
+    @media screen and (max-width: 945px) {
+      display: none;
+    }
+  }
+}
