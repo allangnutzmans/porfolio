@@ -1,3 +1,5 @@
+// TODO MUDAR A PERSCPECTIA MUITO POUCO NO EIXO Y/
+//  Mudar a perspectiva apenas quando passar o mouse no card - talvez até apenas o texot do card
 // BANNER WRAPPER
 .banner-outer {
   position: relative;
@@ -20,7 +22,7 @@
   transform-style: preserve-3d;
   perspective: 1000px;
   transition: transform 0.1s ease-out;
-  backdrop-filter: blur(10px);
+  //backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
