@@ -1,67 +1,15 @@
 <script setup>
-
-import LogoTS from '@/components/icons/LogoTS.vue'
-import LogoVuetify from '@/components/icons/LogoVuetify.vue'
-import LogoVueUse from '@/components/icons/LogoVueUse.vue'
-import LogoPinia from '@/components/icons/LogoPinia.vue'
-import LogoShadcn from '@/components/icons/LogoShadcn.vue'
-import LogoTailwind from '@/components/icons/LogoTailwind.vue'
-import LogoVite from '@/components/icons/LogoVite.vue'
-import LogoTanstack from '../../../components/icons/LogoTanstack.vue'
-
-const STACKWEB3 = [
-  {
-    name: 'Typescript',
-    status: 'Advanced',
-    icon: LogoTS
-  },
-  {
-    name: 'Vite',
-    status: 'Advanced',
-    icon: LogoVite
-  },
-  {
-    name: 'Vuetify',
-    status: 'Updated',
-    icon: LogoVuetify
-  },
-  {
-    name: 'Tailwind',
-    status: 'Updated',
-    icon: LogoTailwind
-  },
-  {
-    name: 'Shadcn',
-    status: 'Updated',
-    icon: LogoShadcn
-  },
-
-  {
-    name: 'Tanstack',
-    status: 'Advanced',
-    icon: LogoTanstack
-  },
-  {
-    name: 'Pinia',
-    status: 'Advanced',
-    icon: LogoPinia
-  },
-  {
-    name: 'VueUse',
-    status: 'Updated',
-    icon: LogoVueUse
-  },
-]
+import { STACK_VUE } from '@/constants/stack'
 </script>
 
 <template>
   <ul class="">
     <li
       class="adobe-product"
-      v-for="(tech, index) in STACKWEB3"
+      v-for="(tech, index) in STACK_VUE"
       :key="index"
     >
-      <div class="products" >
+      <div class="products">
         <component :is="tech.icon" size="50" />
         {{ tech.name }}
       </div>

@@ -1,57 +1,12 @@
 <script setup>
-
-import LogoTS from '@/components/icons/LogoTS.vue'
-import LogoShadcn from '@/components/icons/LogoShadcn.vue'
-import LogoTailwind from '@/components/icons/LogoTailwind.vue'
-import LogoVite from '@/components/icons/LogoVite.vue'
-import LogoWebpack from '@/components/icons/LogoWebpack.vue'
-import LogoMUI from '../../../components/icons/LogoMUI.vue'
-import LogoTanstack from '../../../components/icons/LogoTanstack.vue'
-
-const STACKWEB3 = [
-  {
-    name: 'Typescript',
-    status: 'Advanced',
-    icon: LogoTS
-  },
-  {
-    name: 'Vite',
-    status: 'Preffered',
-    icon: LogoVite
-  },
-  {
-    name: 'Webpack',
-    status: 'Advanced',
-    icon: LogoWebpack
-  },
-  {
-    name: 'MUI',
-    status: 'Updated',
-    icon: LogoMUI
-  },
-  {
-    name: 'Tailwind',
-    status: 'Updated',
-    icon: LogoTailwind
-  },
-  {
-    name: 'Shadcn',
-    status: 'Updated',
-    icon: LogoShadcn
-  },
-  {
-    name: 'Tanstack',
-    status: 'Advanced',
-    icon: LogoTanstack
-  },
-]
+import { STACK_REACT } from '@/constants/stack'
 </script>
 
 <template>
   <ul class="">
     <li
       class="adobe-product"
-      v-for="(tech, index) in STACKWEB3"
+      v-for="(tech, index) in STACK_REACT"
       :key="index"
     >
       <div class="products" >
