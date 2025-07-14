@@ -25,7 +25,7 @@ const APPS_WEB3: { title: string, subtext: string }[] = [
 <template>
   <div class="content-wrapper">
     <div class="content-section">
-      <div class="content-section-title">FOUNDRY / dApps</div>
+      <div class="content-section-title">FOUNDRY & Dapps</div>
       <span>Aqui vai ser adicionado os cards dos projetos, que vão ser links para eles.</span>
       <span>O botão vai abrir uma prévia de cada num .</span>
       <span>Ícones das techs usadas (no card).</span>
