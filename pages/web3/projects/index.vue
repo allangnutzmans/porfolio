@@ -1,4 +1,25 @@
 <script setup lang="ts">
+import SuperCard from '../../../components/motion/SuperCard.vue'
+
+const APPS_WEB3: { title: string, subtext: string }[] = [
+  {
+    title: 'Fund me',
+    subtext: 'A web3 crowdfund that allow users to fund the contract owner with ETH donations.'
+  },
+  {
+    title: 'Lottery',
+    subtext: 'A web3 lottery using Chainlink VRF and Chainlink alarm clock to have a totally decentralized lottery'
+  },
+  {
+    title: 'NFT Market Place',
+    subtext: 'A full-stack NFT marketplace with listing, buying, and compliance features '
+  },
+  {
+    title: 'Elections Dapp',
+    subtext: 'Industry Standart motion graphics & visual effects'
+  }
+];
+
 </script>
 
 <template>
@@ -9,9 +30,11 @@
       <span>O botão vai abrir uma prévia de cada num .</span>
       <span>Ícones das techs usadas (no card).</span>
       <div class="apps-card">
+<!--        <SuperCard />-->
         <AppCard
-          title="Fund me"
-          subtext="Edit, master and create fully proffesional videos"
+          v-for="app in APPS_WEB3"
+          :title="app.title"
+          :subtext="app.subtext"
         >
           <template #icon>
             <IconsPr />
@@ -21,53 +44,8 @@
               class="content-button status-button"
               @click="mainStore.togglePopup()"
             >
-              Update
+              Techs
             </button>
-          </template>
-        </AppCard>
-
-        <AppCard
-          title="Lottery"
-          subtext="Design and publish great projects & mockups"
-        >
-          <template #icon>
-            <IconsId />
-          </template>
-          <template #footer>
-            <button
-              class="content-button status-button"
-              @click="mainStore.togglePopup()"
-            >
-              Update
-            </button>
-          </template>
-        </AppCard>
-
-        <AppCard
-          title="Nft"
-          subtext="Industry Standart motion graphics & visual effects"
-        >
-          <template #icon>
-            <IconsAe />
-          </template>
-          <template #footer>
-            <button
-              class="content-button status-button"
-              @click="mainStore.togglePopup()"
-            >
-              Update
-            </button>
-          </template>
-        </AppCard>
-
-        <AppCard
-          title="Elections Dapp"
-          subtext="Industry Standart motion graphics & visual effects"
-        >
-          <template #icon>
-            <IconsAe />
-          </template>
-          <template #footer>
             <button
               class="content-button status-button"
               @click="mainStore.togglePopup()"
