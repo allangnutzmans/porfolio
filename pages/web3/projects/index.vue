@@ -92,9 +92,5 @@ function openLink(repoLink: string){
         </AppCard>
       </div>
     </div>
-    <div class="content-section">
-      <div class="content-section-title">Code</div>
-      GITHUB REPO
-    </div>
   </div>
 </template>
