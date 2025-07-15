@@ -1,25 +1,29 @@
 <script setup lang="ts">
 import SuperCard from '../../../components/motion/SuperCard.vue'
-import Popup from '../../../components/Popup.vue'
+import Popup from '@/components/Popup.vue'
 import StackList from '@/components/StackList.vue'
 import { STACK_WEB3 } from '@/constants/stack'
 
 const APPS_WEB3: { title: string, subtext: string }[] = [
   {
     title: 'Fund me',
-    subtext: 'A web3 crowdfund that allow users to fund the contract owner with ETH donations.'
+    subtext: 'A web3 crowdfund that allow users to fund the contract owner with ETH donations.',
+    href: 'https://github.com/'
   },
   {
     title: 'Lottery',
-    subtext: 'A web3 lottery using Chainlink VRF and Chainlink alarm clock to have a totally decentralized lottery'
+    subtext: 'A web3 lottery using Chainlink VRF and Chainlink alarm clock to have a totally decentralized lottery',
+    href: 'https://github.com/'
   },
   {
     title: 'NFT Market Place',
-    subtext: 'A full-stack NFT marketplace with listing, buying, and compliance features '
+    subtext: 'A full-stack NFT marketplace with listing, buying, and compliance features ',
+    href: 'https://github.com/'
   },
   {
     title: 'Elections Dapp',
-    subtext: 'Industry Standart motion graphics & visual effects'
+    subtext: 'Industry Standart motion graphics & visual effects',
+    href: 'https://github.com/'
   }
 ];
 
@@ -27,6 +31,10 @@ const techStackDD = ref(false);
 
 function openTechStackDialog(){
   techStackDD.value = true;
+}
+
+function openLink(repoLink: string){
+  window.open(repoLink, '__blank');
 }
 </script>
 
@@ -47,7 +55,7 @@ function openTechStackDialog(){
             This project uses the following technologies and frameworks.
           </template>
           <template #body>
-            <StackList :stack="STACK_WEB3" />
+            <StackList :stack="STACK_WEB3" variant="compact" />
             <div class="content-button-wrapper">
               <button
                 class="content-button status-button open close"
@@ -73,12 +81,13 @@ function openTechStackDialog(){
             >
               Tech Stack
             </button>
-            <button
-              class="content-button status-button"
-              @click="openTechStackDialog()"
+            <s-button
+              role="link"
+              variant="outline"
+              @click="openLink(app.href)"
             >
-              Update
-            </button>
+              Repo
+            </s-button>
           </template>
         </AppCard>
       </div>

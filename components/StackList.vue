@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { Stack } from '../constants/stack';
 
-const props = defineProps<{
+const { variant = 'default' } = defineProps<{
   stack: Stack[]
+  variant?: 'default' | 'compact'
 }>();
 
 </script>
@@ -11,7 +12,7 @@ const props = defineProps<{
   <ul class="">
     <li
       class="adobe-product"
-      v-for="tech in props.stack"
+      v-for="tech in stack"
       :key="tech.name"
     >
       <div class="products" >
@@ -29,7 +30,7 @@ const props = defineProps<{
         ></span>
         {{ tech.status }}
       </span>
-      <div class="button-wrapper">
+      <div class="button-wrapper" v-if="variant === 'default'">
         <s-button
           variant="outline"
           v-if="tech.status == 'Advanced'"

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Banner from '@/components/motion/Banner.vue'
-import StackList from './[components]/StackList.vue'
+import { STACK_WEB3 } from '@/constants/stack'
 </script>
 
 <template>
@@ -23,7 +23,7 @@ import StackList from './[components]/StackList.vue'
   </Banner>
     <div class="content-section">
       <div class="content-section-title">Stack</div>
-      <StackList />
+      <StackList  :stack="STACK_WEB3"/>
     </div>
   </div>
 </template>
