@@ -34,7 +34,6 @@ onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown);
 })
 
-// Style binding para width/height dinâmicos
 const popupStyle = computed(() => {
   return {
     width: props.width ? (typeof props.width === 'number' ? props.width + 'px' : props.width) : '500px',
@@ -55,7 +54,9 @@ const popupStyle = computed(() => {
         <div class="pop-up__subtitle">
           <slot name="subtitle"></slot>
         </div>
-        <slot name="body"></slot>
+        <div class="pop-up__body">
+          <slot name="body"></slot>
+        </div>
       </div>
     </div>
   </div>
