@@ -45,10 +45,10 @@ const popupStyle = computed(() => {
   <div class="overlay-app" :class="{ 'is-active': model }" @click="handleOverlayClick">
     <div class="pop-up" :class="{ 'visible': model }" :style="popupStyle">
       <div class="pop-up__header">
-        <span @click="closePopup" class="macbook-buttons-btn" :style="{ background: '#f96057', margin: '0 10px 25px 10px' }" />
-        <div class="pop-up__title">
-          {{ props.title }}
-        </div>
+        <span @click="closePopup" class="macbook-buttons-btn" :style="{ background: '#f96057'}" />
+      </div>
+      <div class="pop-up__title">
+        {{ props.title }}
       </div>
       <div class="pop-up__wrapper">
         <div class="pop-up__subtitle">
