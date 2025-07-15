@@ -1,12 +1,10 @@
 <script setup>
 import { useHead } from '@unhead/vue'
-import { useMainStore } from '@/store/useMainStore'
 import { useScreenMode } from '@/store/useScreenMode'
 import AppBar from '@/components/layout/AppBar.vue'
 import AppSideBar from '@/components/layout/AppSideBar.vue'
 import MainHeader from '@/components/layout/MainHeader.vue'
 
-const mainStore = useMainStore()
 const { screenMode } = useScreenMode()
 const dark = ref('light-mode')
 
@@ -55,11 +53,6 @@ watch(dark, (val) => {
             <NuxtPage />
           </div>
         </div>
-        <div
-          class="overlay-app"
-          :class="{ 'is-active': mainStore.popup }"
-          @click="mainStore.togglePopup()"
-        ></div>
       </div>
     </div>
   </div>

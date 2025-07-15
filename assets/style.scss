@@ -20,6 +20,7 @@
 @use '@/assets/styles/components/Profile.scss';
 @use '@/assets/styles/components/Banner.scss';
 @use '@/assets/styles/components/SuperCard.scss';
+@use '@/assets/styles/components/Window.scss';
 
 // @use url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -45,6 +46,7 @@
   --button-inactive: rgb(249 250 251 / 55%);
   --dropdown-bg: #21242d;
   --dropdown-hover: rgb(42 46 60);
+  --popup-title-bg: rgb(22 25 37);
   --popup-bg: rgb(22 25 37);
   --search-bg: #14162b;
   --overlay-bg: rgba(36, 39, 59, 0.3);
@@ -58,10 +60,11 @@
   --button-inactive: #3c3a3a;
   --search-bg: rgb(255 255 255 / 31%);
   --dropdown-bg: #f7f7f7;
-  --overlay-bg: rgb(255 255 255 / 30%);
+  --overlay-bg: rgba(0, 0, 0, 0.3);
   --dropdown-hover: rgb(236 236 236);
   --border-color: rgb(255 255 255 / 35%);
-  --popup-bg: rgb(255 255 255);
+  --popup-title-bg: rgba(255, 255, 255, 0.44);
+  --popup-bg: rgba(255, 255, 255, 0.59);
   --hover-menu-bg: rgba(255 255 255 / 35%);
   --scrollbar-bg: rgb(255 253 253 / 57%);
   --content-title-color: --theme-color;
