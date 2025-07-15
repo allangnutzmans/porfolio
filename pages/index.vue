@@ -1,12 +1,15 @@
 
 <script setup>
-import { useMainStore } from '@/store/useMainStore'
 import IconsSt from '@/components/icons/remove/st.vue'
 import IconsPr from '@/components/icons/remove/pr.vue'
 import IconsId from '@/components/icons/remove/id.vue'
 import IconsAe from '@/components/icons/remove/ae.vue'
 
-const mainStore = useMainStore()
+const showPopup = ref(false)
+
+const togglePopup = () => {
+  showPopup.value = !showPopup.value
+}
 </script>
 
 
@@ -25,7 +28,7 @@ const mainStore = useMainStore()
       <template #image></template>
     </Banner>
 
-    <Popup :class="{ visible: mainStore.popup }" title="Update This App">
+    <Popup v-model="showPopup" title="Update This App">
       <template #subtitle>
         Adjust your selections for advanced options as desired before
         continuing.
@@ -43,7 +46,7 @@ const mainStore = useMainStore()
         <div class="content-button-wrapper">
           <button
             class="content-button status-button open close"
-            @click="mainStore.togglePopup()"
+            @click="togglePopup"
           >
             Cancel
           </button>
@@ -54,7 +57,7 @@ const mainStore = useMainStore()
 
     <div class="content-section">
       <div class="content-section-title">Installed</div>
-      <InstalledApps />
+      <InstalledApps :onUpdateClick="togglePopup" />
     </div>
     <div class="content-section">
       <div class="content-section-title">Apps in your plan</div>
@@ -69,7 +72,7 @@ const mainStore = useMainStore()
           <template #footer>
             <button
               class="content-button status-button"
-              @click="mainStore.togglePopup()"
+              @click="togglePopup"
             >
               Update
             </button>
@@ -86,7 +89,7 @@ const mainStore = useMainStore()
           <template #footer>
             <button
               class="content-button status-button"
-              @click="mainStore.togglePopup()"
+              @click="togglePopup"
             >
               Update
             </button>
@@ -103,7 +106,7 @@ const mainStore = useMainStore()
           <template #footer>
             <button
               class="content-button status-button"
-              @click="mainStore.togglePopup()"
+              @click="togglePopup"
             >
               Update
             </button>

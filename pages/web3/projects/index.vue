@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import SuperCard from '../../../components/motion/SuperCard.vue'
+import Popup from '../../../components/Popup.vue'
+import StackList from '@/components/StackList.vue'
+import { STACK_WEB3 } from '@/constants/stack'
 
 const APPS_WEB3: { title: string, subtext: string }[] = [
   {
@@ -20,6 +23,11 @@ const APPS_WEB3: { title: string, subtext: string }[] = [
   }
 ];
 
+const techStackDD = ref(false);
+
+function openTechStackDialog(){
+  techStackDD.value = true;
+}
 </script>
 
 <template>
@@ -31,6 +39,25 @@ const APPS_WEB3: { title: string, subtext: string }[] = [
       <span>Ícones das techs usadas (no card).</span>
       <div class="apps-card">
 <!--        <SuperCard />-->
+        <Popup
+          title="Tech stack for this project"
+          v-model="techStackDD"
+        >
+          <template #subtitle>
+            This project uses the following technologies and frameworks.
+          </template>
+          <template #body>
+            <StackList :stack="STACK_WEB3" />
+            <div class="content-button-wrapper">
+              <button
+                class="content-button status-button open close"
+                @click="techStackDD = false"
+              >
+                Close
+              </button>
+            </div>
+          </template>
+        </Popup>
         <AppCard
           v-for="app in APPS_WEB3"
           :title="app.title"
@@ -42,13 +69,13 @@ const APPS_WEB3: { title: string, subtext: string }[] = [
           <template #footer>
             <button
               class="content-button status-button"
-              @click="mainStore.togglePopup()"
+              @click="openTechStackDialog()"
             >
-              Techs
+              Tech Stack
             </button>
             <button
               class="content-button status-button"
-              @click="mainStore.togglePopup()"
+              @click="openTechStackDialog()"
             >
               Update
             </button>

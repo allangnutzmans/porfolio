@@ -15,8 +15,16 @@ import LogoTanstack from '@/components/icons/LogoTanstack.vue'
 import LogoVuetify from '@/components/icons/LogoVuetify.vue'
 import LogoVueUse from '@/components/icons/LogoVueUse.vue'
 import LogoPinia from '@/components/icons/LogoPinia.vue'
+import { Component } from 'nuxt/schema'
 
-export const STACK_WEB3 = [
+export type Stack = {
+  name: string,
+  status: string,
+  icon: Component,
+  category: string
+}
+
+export const STACK_WEB3: Stack[] = [
   {
     name: 'Ethereum',
     status: 'Advanced',
@@ -55,7 +63,7 @@ export const STACK_WEB3 = [
   }
 ]
 
-const STACK_JS = [
+const STACK_JS: Stack[] = [
   {
     name: 'Typescript',
     status: 'Advanced',
@@ -88,7 +96,7 @@ const STACK_JS = [
   },
 ]
 
-export const STACK_VUE = [
+export const STACK_VUE: Stack[] = [
   ...STACK_JS,
   {
     name: 'Vuetify',
@@ -128,7 +136,7 @@ export const STACK_VUE = [
   },
 ]
 
-export const STACK_REACT = [
+export const STACK_REACT: Stack[] = [
   ...STACK_JS,
   {
     name: 'Webpack',
