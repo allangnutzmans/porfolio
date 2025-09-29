@@ -17,7 +17,7 @@ defineProps<{
     <div class="app-card-buttons">
       <slot name="footer"></slot>
 
-      <div class="menu"></div>
+      <!-- <div class="menu"></div> -->
     </div>
   </div>
 </template>

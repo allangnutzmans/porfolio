@@ -8,12 +8,10 @@ import { STACK_VUE } from '@/constants/stack'
   <div class="content-wrapper">
     <Banner
     title="Vue"
-    text="Leaveraging the latest Vue 3 composition API for best perfomance and code readability.
-Grab yourself 10 free images from Adobe Stock in a 30-day free trial
-        plan and find perfect image, that will help you with your new project."
-    btntext="Start free trial"
+    text="Leaveraging the latest Vue 3 composition API for best perfomance and code readability."
     bg-image="vue-banner.png"
     align="right"
+    
   >
     <template #icon>
 <!--        <v-icon height="50" name="si-ipfs" />

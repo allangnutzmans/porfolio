@@ -20,7 +20,6 @@ const togglePopup = () => {
       text="Grab yourself 10 free images from Adobe Stock in a 30-day free trial
         plan and find perfect image, that will help you with your new project."
       image="glass.png"
-      btntext="Start free trial"
     >
       <template #icon>
         <IconsSt />

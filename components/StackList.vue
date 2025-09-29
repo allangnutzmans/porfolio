@@ -7,6 +7,9 @@ const props = defineProps<{
 }>();
 
 const { variant = 'default' } = props;
+const openDocumentation  = (link: string) => {
+  window.open(link) 
+}
 
 </script>
 
@@ -32,20 +35,20 @@ const { variant = 'default' } = props;
         ></span>
         {{ tech.status }}
       </span>
-      <div class="button-wrapper" v-if="variant === 'default'">
-        <s-button
-          variant="outline"
-          v-if="tech.status == 'Advanced'"
-        >
-          Open
-        </s-button>
-        <button
+      <div class="button-wrapper ga-2" v-if="variant === 'default'">
+      <!-- TODO: RELATIONSHIP THIS WITH APPS -->
+<!--    <button
           class="content-button status-button"
-          v-if="tech.status == 'Update Available'"
           @click=""
         >
-          Update this app
-        </button>
+          Apps with
+        </button> -->
+        <s-button
+          variant="outline"
+          @click="openDocumentation(tech.doc_link)"
+        >
+          Docs
+        </s-button>
       </div>
     </li>
   </ul>
@@ -58,5 +61,10 @@ svg {
   border-radius: 6px;
   margin-right: 16px;
   flex-shrink: 0;
+}
+
+.ga-2 {
+  display: flex;
+  gap: 0.5em;
 }
 </style>

@@ -4,7 +4,8 @@ const props = defineProps<{
   icon: string,
   text: string,
   image: string,
-  btntext: string
+  btntext?: string,
+  goTo: string
 }>();
 </script>
 <template>
@@ -17,7 +18,7 @@ const props = defineProps<{
       <div class="content-text">
         {{ text }}
       </div>
-      <button class="content-button">{{ btntext }}</button>
+      <button class="content-button" @click="navigateTo(goTo)">{{ btntext }}</button>
     </div>
     <slot name="image">
       <img class="content-wrapper-img" :src="image" alt="" />

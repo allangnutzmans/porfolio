@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { STACK_WEB3, STACK_VUE, STACK_REACT } from '@/constants/stack'
-import { Stack } from '@/constants/stack'
+import { ref, computed } from 'vue'
+import { STACK_WEB3, STACK_VUE, STACK_REACT, type Stack } from '@/constants/stack'
 import Popup from '@/components/Popup.vue'
+import AppCard from '@/components/AppCard.vue'
+import { getFavicon } from '~/utils/getFavicon'
 
 type WEB3APP = {
-  title: string,
-  subtext: string,
+  title: string
+  subtext: string
   repo_link: string
   href: string
-  stack: Stack,
+  stack: Stack[]
+  state?: 'active' | 'in-progress' | 'radar'
 }
 
 const APPS_WEB3: WEB3APP[] = [
@@ -22,13 +25,13 @@ const APPS_WEB3: WEB3APP[] = [
   {
     title: 'Lottery',
     subtext: 'A web3 lottery using Chainlink VRF and Chainlink alarm clock to have a totally decentralized lottery',
-    href: 'https://github.com/',
-    repo_link: 'https://github.com/',
+    href: 'https://the-rafflesol.vercel.app/',
+    repo_link: 'https://github.com/allangnutzmans/foundry-smart-contract-lottery',
     stack: STACK_REACT
   },
   {
     title: 'NFT Market Place',
-    subtext: 'A full-stack NFT marketplace with listing, buying, and compliance features ',
+    subtext: 'A full-stack NFT marketplace with listing, buying, and compliance features',
     href: 'https://github.com/',
     repo_link: 'https://github.com/',
     stack: STACK_REACT
@@ -40,29 +43,41 @@ const APPS_WEB3: WEB3APP[] = [
     repo_link: 'https://github.com/',
     stack: STACK_REACT
   }
-];
+]
 
-const techStackDD = ref(false);
-const selectedApp = ref<WEB3APP | null>(null);
+const techStackDD = ref(false)
+const selectedApp = ref<WEB3APP | null>(null)
+
+// Computed para buscar favicon
+const favicons = computed(() =>
+  APPS_WEB3.map(app => ({
+    href: app.href,
+    favicon: ref<string | null>(null)
+  }))
+)
+
+async function loadFavicon(appHref: string, index: number) {
+  const icon = await getFavicon(appHref)
+  if (icon) favicons.value[index].favicon.value = icon
+}
 
 function openTechStackDialog(app: WEB3APP){
-  selectedApp.value = app;
-  techStackDD.value = true;
+  selectedApp.value = app
+  techStackDD.value = true
 }
 
 function closeTechStackDialog(){
-  techStackDD.value = false;
-  selectedApp.value = null;
+  techStackDD.value = false
+  selectedApp.value = null
 }
 
 function openRepoLink(repoLink: string){
-  window.open(repoLink, '_blank');
+  window.open(repoLink, '_blank')
 }
 
 function openApp(link: string){
-  window.open(link, '_blank');
+  window.open(link, '_blank')
 }
-
 </script>
 
 <template>
@@ -70,36 +85,43 @@ function openApp(link: string){
     <div class="content-section">
       <div class="content-section-title">FOUNDRY & Dapps</div>
       <span>Aqui vai ser adicionado os cards dos projetos, que vão ser links para eles.</span>
-      <span>O botão vai abrir uma prévia de cada num .</span>
+      <span>O botão vai abrir uma prévia de cada num popup.</span>
       <span>Ícones das techs usadas (no card).</span>
+
+      <Popup
+        v-if="selectedApp"
+        :title="selectedApp.title"
+        v-model="techStackDD"
+      >
+        <template #subtitle>
+          This project uses the following technologies and frameworks.
+        </template>
+        <template #body>
+          <StackList :stack="selectedApp.stack" variant="compact" />
+        </template>
+      </Popup>
+
       <div class="apps-card">
-<!--        <SuperCard />-->
-        <Popup
-          :title="selectedApp.title"
-          v-model="techStackDD"
-          v-if="selectedApp != null"
-        >
-          <template #subtitle>
-            This project uses the following technologies and frameworks.
-          </template>
-          <template #body>
-            <StackList :stack="selectedApp.stack" variant="compact" />
-          </template>
-        </Popup>
         <AppCard
-          v-for="app in APPS_WEB3"
+          v-for="(app, index) in APPS_WEB3"
+          :key="app.title"
           :title="app.title"
           :subtext="app.subtext"
           @click="openApp(app.href)"
           role="button"
         >
           <template #icon>
-            <IconsPr />
+            <img
+              v-if="favicons[index]?.favicon"
+              :src="favicons[index].favicon"
+              alt="favicon"
+            />
           </template>
+
           <template #footer>
             <button
               class="content-button status-button"
-              @click="openTechStackDialog(app)"
+              @click.stop="openTechStackDialog(app)"
             >
               Tech Stack
             </button>
@@ -117,7 +139,7 @@ function openApp(link: string){
   </div>
 </template>
 
-<style>
+<style scoped>
 ul {
   max-height: 600px;
   overflow-y: auto;

@@ -8,12 +8,10 @@ import { STACK_REACT } from '@/constants/stack'
   <div class="content-wrapper">
     <Banner
     title="React"
-    text="Community boosted framework. Popuplar. Grab yourself 10 free images from Adobe Stock in a 30-day free trial
-        plan and find perfect image, that will help you with your new project
-        plan and find perfect image, that will help you with your new project"
-    btntext="Start free trial"
+    text="Community boosted framework. Popuplar."
     bg-image="react-banner-full.png"
     align="right"
+    goTo="/react/projects"
   >
     <template #icon>
 <!--        <v-icon height="50" name="si-ipfs" />
