@@ -1,5 +1,5 @@
 <script setup>
-import { useHead } from '@unhead/vue'
+import { useHead } from '#imports'
 import { useScreenMode } from '@/store/useScreenMode'
 import AppBar from '@/components/layout/AppBar.vue'
 import AppSideBar from '@/components/layout/AppSideBar.vue'
