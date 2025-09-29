@@ -1,19 +1,24 @@
 <script setup lang="ts">
+import { navigateTo } from '#app'
 import { useMotion } from '@vueuse/motion'
 import BannerCardMotion from './BannerCardMotion.vue'
 import BannerTextMotion from './BannerTextMotion.vue'
 
-const props = defineProps<{
+const {
+  btntext = 'Explore projects',
+} = defineProps<{
   title: string,
   icon: string,
   text: string,
   bgImage: string,
-  btntext: string,
+  btntext?: string,
+  goTo: string
   align: {
     type: string,
     default: 'right'
   }
 }>()
+
 
 const cardRef = ref(null)
 const textRef = ref(null)
@@ -58,6 +63,7 @@ onBeforeUnmount(() => {
         :text="text"
         :btntext="btntext"
         :align="align"
+        @action="navigateTo(goTo)"
       >
         <template #icon><slot name="icon" /></template>
       </BannerTextMotion>

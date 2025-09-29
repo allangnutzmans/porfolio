@@ -9,8 +9,17 @@ const props = defineProps({
     default: 'right'
   }
 })
+
+const emit = defineEmits<{
+  action: []
+}>()
+
 const textRef = ref(null)
 defineExpose({ textRef })
+
+const handleButtonClick = () => {
+  emit('action')
+}
 </script>
 
 <template>
@@ -22,6 +31,6 @@ defineExpose({ textRef })
     <div>
       {{ text }}
     </div>
-    <button class="content-button-highlight">{{ btntext }}</button>
+    <button class="content-button-highlight" @click="handleButtonClick">{{ btntext }}</button>
   </div>
 </template>

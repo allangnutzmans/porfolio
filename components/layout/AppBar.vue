@@ -37,7 +37,7 @@ function isActive(index) {
   <div class="header" :class="{ wide: wide }">
     <InnerWindowButtons />
     <div class="header-menu">
-      <a
+<!--<a
         v-for="(item, index) in menu"
         :key="index"
         class="menu-link"
@@ -45,7 +45,7 @@ function isActive(index) {
         :href="item.href"
         @click.prevent="isActive(index)"
         >{{ item.text }}</a
-      >
+      > -->
     </div>
     <div class="search-bar">
       <input

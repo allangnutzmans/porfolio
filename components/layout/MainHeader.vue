@@ -20,11 +20,11 @@ const submenu = [
     },
     end: false
   },
-  {
+/*   {
     text: 'Web',
     getHref: () => '#', // Link estático.
     end: false
-  },
+  }, */
 ]
 </script>
 
