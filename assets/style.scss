@@ -182,6 +182,7 @@ body.light-mode:before {
   display: flex;
   flex-grow: 1;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .left-side {
