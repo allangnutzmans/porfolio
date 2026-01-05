@@ -27,11 +27,8 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ['normalize.css/normalize.css', '@/assets/style.scss'],
-  modules: [
-    '@pinia/nuxt',
-    '@vueuse/motion/nuxt',
-  ],
+  css: ['normalize.css/normalize.css', '@/assets/style.scss', '@/assets/css/tailwind.css'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@vueuse/motion/nuxt', '@nuxt/image'],
   runtimeConfig: {
     public: {
       motion: {
